@@ -20,7 +20,7 @@
 .header__nav-item a {
     text-decoration: none;
     color: var(--gray-500);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: var(--fw-bold);
     transition: color 0.3s ease;
     position: relative;
