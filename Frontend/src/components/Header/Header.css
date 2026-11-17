@@ -1,0 +1,149 @@
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+}
+
+.header__nav-items {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header__nav-item {
+    list-style: none;
+}
+
+.header__nav-item a {
+    text-decoration: none;
+    color: var(--gray-500);
+    font-size: 0.7rem;
+    font-weight: var(--fw-bold);
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.header__nav-item a:hover {
+    color: var(--blue-400);
+}
+
+.header__nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    opacity: 0;
+    height: 2px;
+    background-color: var(--blue-400);
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.header__nav-item a:hover::after {
+    width: 100%;
+    opacity: 1;
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__btn {
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: var(--fw-bold);
+    font-family: inherit;
+}
+
+.header__btn--login {
+    background-color: transparent;
+    color: var(--gray-500);
+    transition: color 0.3s ease;
+}
+
+.header__btn--login:hover {
+    color: var(--blue-400);
+}
+
+.header__btn--signup {
+    background-color: var(--blue-400);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: opacity 0.3s ease;
+}
+
+.header__btn--signup:hover {
+    opacity: 0.7;
+}
+
+.header__menu {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 1.5rem;
+}
+
+.header__toggle {
+    display: none;
+}
+
+
+@media (max-width: 520px) {
+    .header {
+        position: relative;
+    }
+
+    .header__toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--gray-500);
+        cursor: pointer;
+    }
+
+    .header__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        right: 1rem;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-left: 0;
+        padding: 2rem;
+        background-color: var(--purple-950);
+        border-radius: 10px;
+        z-index: 10;
+    }
+
+    .header__menu--open {
+        display: flex;
+    }
+
+    .header__nav-items {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .header__nav-item a,
+    .header__btn--login {
+        color: white;
+    }
+
+    .header__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header__btn--signup {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}
